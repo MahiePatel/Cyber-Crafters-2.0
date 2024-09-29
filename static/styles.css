@@ -1,0 +1,542 @@
+/* Prevent horizontal scrolling */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden; /* Disable horizontal scrolling */
+            overflow-y: auto; /* Allow vertical scrolling */
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 0px; /* Width of the scrollbar */
+            height: 0px; /* Height of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: black; /* Track color */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: black; /* Scrollbar color */
+            border-radius: 6px; /* Round corners */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: black; /* Scrollbar color on hover */
+        }
+
+
+        .video-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999; /* Make sure the video is on top */
+            transition: opacity 1s ease; /* Fade-out transition */
+        }
+
+        .video-intro.fade-out {
+            opacity: 0; /* Fade to transparent */
+        }
+
+        .video-intro video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire screen */
+        }
+
+
+
+        /* Header with Logo and Navigation Buttons */
+        .header {
+            position: fixed; /* Fixes the header at the top */
+            background-color: black;
+            height: 60px; /* Adjusted height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            width: 97vw; /* Full viewport width */
+            z-index: 1000; /* Ensures the header stays on top of other content */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 280px;
+            height: auto;
+           margin-left: -20px;
+           margin-top: -10px;
+           
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-buttons button {
+            color: white;
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 350;
+            font-size: 20px;
+            height: 50px; /* Adjusted button height */
+            width: 130px; /* Adjusted button width */
+            letter-spacing: 1px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-shadow: 2px 2px 4px white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-buttons button:hover {
+            border: 3px solid #8858c5;
+            background-color: transparent;
+            box-shadow: 4px 3px 4px #8858c5,
+                        -4px -3px 4px #8e4c94;
+            text-shadow: none;
+        }
+
+        .icon1{
+            margin-right: 5px;
+        }
+
+        .icon2{
+            margin-right: 5px;
+        }
+
+        .icon3{
+            margin-right: 5px;
+        }
+
+        /* Main content container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            margin-bottom: 50px; /* Add margin for spacing */
+        }
+
+        /* Left Side: Text container */
+        .left-side {
+            width: 70%; /* Adjusted width */
+        }
+
+        .left-side h1 {
+            font-family: Verdana, sans-serif;
+            font-size: 45px;
+            margin-top: 100px;
+            margin-bottom: 5px;
+            padding-left: 8px;
+            color: white;
+            white-space: nowrap; /* Keeps the text on one line */
+            overflow: hidden; /* Hides the overflowing text */
+            border-right: 2px solid white; /* Adds the typing cursor effect */
+            width: 0; /* Start with no width */
+            animation: typing 3s steps(30, end) 2.9s forwards; /* Typing animation */
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; } /* Make the width match the content length */
+        }
+
+        /* Stop the caret blinking once the animation is done */
+        .left-side h1 {
+            animation-fill-mode: forwards; /* Keeps the final state */
+            border-right: none; /* Removes the blinking cursor after animation */
+        }
+
+
+
+        .left-side p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+
+        /* Right Side: Image container */
+        .right-side {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-side img {
+            width: 35vw; /* Adjusted width to fit the container */
+            height: auto;
+            opacity: 0.8;
+            padding-left: 250px;
+            padding-top: 40px;
+        }
+
+
+        /* Additional section for reversed content */
+        .container-reverse {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .left-side-reverse {
+            width: 30%; /* Adjusted width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-side-reverse img {
+            width: 35vw; /* Adjusted width */
+            height: auto;
+            opacity: 0.8;
+            padding-left: 200px;
+            padding-top: -50px;
+            margin-top: -80px;
+        }
+
+        .right-side-reverse {
+            width: 70%; /* Adjusted width */
+        }
+
+        .right-side-reverse h2 {
+            font-family: Verdana, sans-serif;
+            font-size: 45px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            padding-left: 8px;
+        }
+
+        .right-side-reverse p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        /* Additional section for reversed content */
+        .container-reverse2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .left-side-reverse2 {
+            width: 70%; /* Adjusted width */
+        }
+
+        .left-side-reverse2 h3 {
+            font-family: Verdana, sans-serif;
+            font-size: 45px;
+            margin-top: 70px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .left-side-reverse2 p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+/* Ensure the button retains the same style */
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: ghostwhite;
+  overflow: hidden;
+  margin-left: 35%;
+}
+
+.cssbuttons-io svg {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #014b95;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+
+
+        .right-side-reverse2 {
+            width: 30%; /* Adjusted width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-side-reverse2 img {
+            width: 35vw; /* Adjusted width */
+            height: auto;
+            opacity: 0.8;
+            padding-left: 350px;
+            padding-top: -50px;
+            margin-top: 10px;
+        }
+
+
+
+
+
+
+
+    .team-section {
+    padding: 2em;
+    background-color: black;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont;
+    font-size: 3em;
+    margin-bottom: 1.3em;
+    color: white;
+    text-shadow: 
+        -2px -2px 0 #8e2de2,  
+        2px -2px 0 #8e2de2,
+        -2px 2px 0 #8e2de2,
+        2px 2px 0 #8e2de2; /* Border color */
+}
+
+
+.team-section p {
+    font-size: 1.2em;
+    color: white;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    width: 200px;
+    height: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-45px);
+    box-shadow: 0 12px 24px #8e2de2;
+}
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1em;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #8e2de2;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.team-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+
+
+.social-icons a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s;
+  font-size: 36px; /* Increase the font-size */
+  margin: 0 30px; /* Adjust the margin to increase the gap */
+  position: relative;
+  top: -7px; /* Adjust this value to move the icons up */
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn Color */
+}
+
+.social-icons a:nth-child(2):hover {
+  color: grey; /* GitHub Color */
+}
+
+
+
+
+
+dialog {
+    background-color: black; /* Background color */
+    border: none;
+    border-radius: 0; /* Remove border radius for full screen */
+    padding: 25px;
+    color: white;
+    box-shadow: none; /* Remove box shadow for a full-screen effect */
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* No margin */
+    animation: fadeIn 0.3s ease-in-out;
+    position: fixed; /* Fixed positioning to stay in place */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 999; /* On top of overlay */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        dialog h2{
+            color: #8858c5;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 45px;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-top: 45px;
+        }
+        
+        dialog h3 {
+            color: #8858c5;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 45px;
+            margin-bottom: 15px;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+
+        
+
+        .about-text{
+            margin-top: -2%;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .contact-text{
+            margin-top: -1%;
+            font-size: 24px;
+            line-height: 0.5;
+            padding-left: 32%;
+            padding-top: 40px;
+        }
+
+
+        .cross {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            font-size: 30px;
+            background-color: transparent;
+            color: #8858c5;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .cross:hover {
+            transform: rotate(180deg);
+            color: white;
+        }
+
+        .footer {
+            background-color: #8e2de2; /* Black background */
+            color: white; /* White text color */
+            text-align: center; /* Center text */
+            padding: 5px 0; /* Vertical padding */
+            position: relative; /* Relative positioning */
+            bottom: 0; /* Stick to the bottom */
+            width: 100%; /* Full width */
+            height: 60px;
+            z-index: 100; /* On top of other elements */
+        }
+
+        .footer-content {
+            max-width: 1200px; /* Max width for the content */
+            margin: 0 auto; /* Center align */
+            padding: 0 20px; /* Side padding */
+            font-size: 12px;
+            text-align: center  ;
+        }
+       
