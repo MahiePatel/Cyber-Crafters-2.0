@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifting Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text for better contrast */
+        }
+        h2 {
+            color: #9b59b6; /* Purple headings */
+        }
+        .form-section, .chat-section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #1c1c1c; /* Dark background for sections */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        .form-section input, .form-section select, .form-section textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #9b59b6; /* Purple border */
+            background-color: #2c2c2c; /* Dark input background */
+            color: #fff; /* White input text */
+        }
+        .form-section input:focus, .form-section select:focus, .form-section textarea:focus {
+            outline: none;
+            border-color: #9b59b6; /* Highlight border on focus */
+        }
+        button {
+            background-color: #9b59b6; /* Purple button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #8e44ad; /* Darker purple on hover */
+        }
+        .chat-section {
+            margin-top: 40px;
+        }
+        .chat-section textarea {
+            width: 100%;
+            height: 100px;
+            background-color: #2c2c2c;
+            color: #fff;
+            border: 1px solid #9b59b6;
+            border-radius: 5px;
+        }
+        #chat-output {
+            margin-top: 20px;
+            background-color: #2c2c2c;
+            padding: 10px;
+            border-radius: 5px;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-section">
+    <h2>Gifting Assistant - Provide Your Details</h2>
+    <form id="gifting-form">
+        <!-- Basic Information -->
+        <label>Occasion: (e.g., Birthday, Anniversary, etc</label>
+        <input type="text" id="occasion" required>
+
+        <label>Relationship With Recipient (e.g., Brother, Sister):</label>
+        <input type="text" id="recipient" required>
+
+        <label>Recipient Age:</label>
+        <input type="number" id="age" required>
+
+        <label>Recipient Interests (e.g., Sports, Art):</label>
+        <input type="text" id="interest" required>
+
+        <label>Budget (e.g., 1000-2000):</label>
+        <input type="text" id="budget" required>
+
+        <!-- Additional Questions -->
+        <label>Uniqueness: (1 star: Not important – 5 stars: Very important)</label>
+        <select id="uniqueness" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Personalized: (1 star: Not at all – 5 stars: Highly personalized)</label>
+        <select id="personalized" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Price Importance: (1 star: Budget-friendly – 5 stars: Premium gift)</label>
+        <select id="price_importance" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Practicality vs Aesthetics: (1 star: Highly practical – 5 stars: Completely aesthetic)</label>
+        <select id="practicality_vs_aesthetics" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Emotional Value: (1 star: Low emotional value – 5 stars: Deep emotional value)</label>
+        <select id="emotional_value" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Hobby Importance: (1 star: Not important – 5 stars: Very important)</label>
+        <select id="hobby_importance" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Surprise Appreciation: (1 star: Not likely – 5 stars: Very likely)</label>
+        <select id="surprise_appreciation" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Lasting Impact: (1 star: Short-term joy – 5 stars: Long-lasting impact)</label>
+        <select id="lasting_impact" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Packaging Importance: (1 star: Not important – 5 stars: Very important)</label>
+        <select id="packaging_importance" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Daily Use: (1 star: Not important – 5 stars: Very important)</label>
+        <select id="daily_use" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label>Description of Recipient:</label>
+        <textarea id="description" required></textarea>
+
+        <button type="button" onclick="getSuggestions()">Get Suggestions</button>
+    </form>
+</div>
+
+<div class="chat-section">
+    <h2>Chat with the Assistant</h2>
+    <div id="chat-output"></div>
+    <textarea id="chat-input" placeholder="Type your response here..."></textarea>
+    <button type="button" onclick="sendMessage()">Send</button>
+</div>
+
+
+  <script>
+      async function getSuggestions() {
+          const user_data = {
+              occasion: document.getElementById('occasion').value,
+              recipient: document.getElementById('recipient').value,
+              age: document.getElementById('age').value,
+              interest: document.getElementById('interest').value,
+              budget: document.getElementById('budget').value,
+              uniqueness: document.getElementById('uniqueness').value,
+              personalized: document.getElementById('personalized').value,
+              price_importance: document.getElementById('price_importance').value,
+              practicality_vs_aesthetics: document.getElementById('practicality_vs_aesthetics').value,
+              emotional_value: document.getElementById('emotional_value').value,
+              hobby_importance: document.getElementById('hobby_importance').value,
+              surprise_appreciation: document.getElementById('surprise_appreciation').value,
+              lasting_impact: document.getElementById('lasting_impact').value,
+              packaging_importance: document.getElementById('packaging_importance').value,
+              daily_use: document.getElementById('daily_use').value,
+              description: document.getElementById('description').value
+          };
+
+          const response = await fetch('/get_suggestions', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(user_data)
+          });
+
+          const data = await response.json();
+          document.getElementById('chat-output').innerHTML += `<p><strong>Assistant:</strong> ${data.suggestions}</p>`;
+      }
+
+      async function sendMessage() {
+          const chatInput = document.getElementById('chat-input').value;
+          if (!chatInput) return;
+
+          const chatOutput = document.getElementById('chat-output');
+          chatOutput.innerHTML += `<p><strong>You:</strong> ${chatInput}</p>`;
+
+          // Get user data from the form
+          const user_data = {
+              occasion: document.getElementById('occasion').value,
+              recipient: document.getElementById('recipient').value,
+              age: document.getElementById('age').value,
+              interest: document.getElementById('interest').value,
+              budget: document.getElementById('budget').value,
+              uniqueness: document.getElementById('uniqueness').value,
+              personalized: document.getElementById('personalized').value,
+              price_importance: document.getElementById('price_importance').value,
+              practicality_vs_aesthetics: document.getElementById('practicality_vs_aesthetics').value,
+              emotional_value: document.getElementById('emotional_value').value,
+              hobby_importance: document.getElementById('hobby_importance').value,
+              surprise_appreciation: document.getElementById('surprise_appreciation').value,
+              lasting_impact: document.getElementById('lasting_impact').value,
+              packaging_importance: document.getElementById('packaging_importance').value,
+              daily_use: document.getElementById('daily_use').value,
+              description: document.getElementById('description').value
+          };
+
+          const response = await fetch('/ask_questions', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ user_data, additional_info: chatInput })
+          });
+
+          const data = await response.json();
+          chatOutput.innerHTML += `<p><strong>Assistant:</strong> ${data.question}</p>`;
+          document.getElementById('chat-input').value = ''; // Clear input
+      }
+  </script>
+
+
+</body>
+</html>

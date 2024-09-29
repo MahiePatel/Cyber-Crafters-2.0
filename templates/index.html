@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Crafter Team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+
+    <div class="video-intro">
+        <video autoplay muted playsinline>
+            <source src="{{ url_for('static', filename='intro.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <!-- Header with Logo and Navigation Buttons -->
+    <div class="header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='logo-2.png') }}" onclick="window.location.reload();" alt="Logo" class="logo">
+        </div>
+        <div class="nav-buttons">
+            <button class="a1" onclick="window.location.reload();"><img src="{{ url_for('static', filename='home.png') }}" class="icon1">Home</button>
+            <button class="a2" onclick="document.getElementById('myDialog').showModal();"><img src="{{ url_for('static', filename='info.png') }}" class="icon2">About</button>
+            <button class="a3" onclick="document.getElementById('myDialog1').showModal();"><img src="{{ url_for('static', filename='phone-telephone.png') }}" class="icon3">Contact</button>
+        </div>
+
+    </div>
+
+    
+    <!-- About Dialog -->
+    <dialog id="myDialog">
+        <form method="dialog">
+            <h2>Cyber Crafter</h2>
+            <p class="about-text">
+            Team Cyber Crafter</br>
+                We are Team Cyber Crafter from Gujarat University, currently in Semester 5 of our integrated MSc program in Artificial Intelligence and Machine Learning/Data Science. Our diverse projects reflect our commitment to innovation and problem-solving in the AI/ML field.</br>
+            </br>Our Projects:</br>
+                1.Jarvis – A versatile personal voice assistant that performs tasks such as web browsing, playing music, and providing news updates, utilizing Python and various libraries for enhanced daily productivity.</br>
+                2.Disaster Management Web Application – An application using the shortest path algorithm for efficient disaster evacuation and resource allocation, with an interactive interface for route visualization and real-time updates.</br>
+                3.Career Planning Chatbot– Offers personalized career guidance by analyzing user input on interests, skills, and academic performance to suggest optimal career paths with detailed insights.</br>
+                4.Fake News Detection – Employs ML, deep learning, and NLP models to identify false news, providing additional features like sentiment analysis, news summarization, and related story recommendations.</br>
+                5.AI Chatbot – A dynamic conversational AI designed to facilitate user interactions across various applications, leveraging advanced NLP and machine learning techniques for high-quality responses.</br>
+                6.Disease Prediction System – Predicts diseases based on medical data using ML models and data visualization tools for accurate forecasting and early diagnosis.</br>
+                7.Face & Hand Recognition System – Uses MediaPipe for secure authentication and user identification through real-time facial and hand gesture recognition.</br>
+                8.Help Sign Detection System – Detects distress signals using MediaPipe and ML, with potential integration into CCTV systems for rapid emergency response and enhanced public safety.</br>
+                Work in Progress - Deaf.ai  –Deaf.ai is an AI-based translator that converts American Sign Language (ASL) into text or speech using advanced face and hand recognition technology. It bridges communication gaps for the deaf and hard-of-hearing community by providing real-time translation and enhancing accessibility.</br>
+           </p>
+            <menu>
+                <button class="cross" onclick="document.getElementById('myDialog').close();">X</button>
+            </menu> 
+        </form>
+    </dialog>
+
+
+    <!-- Contact Dialog -->
+    <dialog id="myDialog1">
+        <form method="dialog">
+           
+            <h3>CONTACT US</h3>
+            <p class="contact-text">Feel free to reach out to us!</p>
+            <p class="contact-text">1: Shah Neel Atulkumar : neelshah18102004@gmail.com</p>
+            <p class="contact-text">2: Brahmbhatt Avani : b.avani@outlook.com</p>
+            <p class="contact-text">3: Patel Yashvi Shaileshkumar : patelyashvi1311@gmail.com</p>
+            <p class="contact-text">4: Patel Mahi Mukeshbhai : mahi2406.patel@gmail.com</p>
+            <p class="contact-text">5: Bhatt Stavan Amit : sta1bhatt@gmail.com</p>
+            <menu>
+                <button class="cross" onclick="document.getElementById('myDialog1').close();">X</button>
+            </menu> 
+        </form>
+    </dialog>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="left-side">
+            <h1>Team Cyber Crafters</h1>
+            <p>
+                Team Cyber Crafters is a group of passionate AIML and 
+                Data Science students specializing in full stack development.
+                 We excel in both front-end and back-end development, 
+                 along with the deployment of machine learning (ML), 
+                 deep learning (DL), and AI-integrated models. Our expertise 
+                 includes creating innovative solutions, building web 
+                 applications, and deploying complex ML models. With a 
+                 commitment to pushing boundaries, we explore 
+                 cutting-edge technologies to deliver practical and impactful 
+                 results. We aim to solve real-world problems and bring creativity 
+                 to every project we undertake, driven by a shared vision of making a 
+                 positive difference through technology. Our team values collaboration, 
+                 constant learning, and a focus on user-centric designs. Whether it's 
+                 developing a responsive web interface 
+                 or an AI-driven model, we approach every challenge with determination. 
+                 Together, we strive to lead in the world of tech innovation.            
+            </p>
+        </div>
+        <div class="right-side">
+           <img src="{{ url_for('static', filename='pose_47.png') }}" alt="Team Image">
+        </div>
+    </div>
+
+    <!-- New Section: Reversed Layout -->
+    <div class="container-reverse">
+        <div class="left-side-reverse">
+            <img src="{{ url_for('static', filename='pose_55.png') }}" alt="Mission Image">
+        </div>
+        <div class="right-side-reverse">
+            <h2>Our Mission</h2>
+            <p>
+                At Team Cyber Crafters, our mission is to harness the power 
+                of Artificial Intelligence (AI), Machine Learning (ML), and 
+                Data Science to create impactful, real-world solutions. 
+                We aim to innovate through technology, pushing the boundaries 
+                in full-stack development, from dynamic front-end interfaces 
+                to robust back-end systems. Our expertise extends to building
+                 and deploying intelligent models that transform industries, 
+                 enhance user experiences, and improve lives, whether through ML, 
+                 deep learning, or AI-integrated solutions.We are a passionate
+                 team of collaborators driven by creativity and a user-centric approach. 
+                 Our goal is to stay at the forefront of technological trends while fostering 
+                 continuous learning. By combining cutting-edge development with accessible, 
+                 meaningful applications, we aim to deliver long-lasting, 
+                 efficient solutions in a rapidly evolving digital landscape. 
+                 Our mission is to empower individuals and organizations by unlocking 
+                 the potential of AI/ML, ensuring innovation that has 
+                 a positive, global impact.
+            </p>
+        </div>
+    </div>
+
+    <!-- New Section: Reversed2 Layout -->
+    <div class="container-reverse2">
+        <div class="left-side-reverse2">
+            <h3>Chatbot for Gifting E-commerce website</h3>
+            <p>
+            Our Gifting E-commerce Chatbot transforms the gift selection process by providing personalized, AI-driven recommendations tailored to users' needs. By collecting essential details such as occasion, recipient, budget, and interests, the chatbot curates relevant gift options with ease. Integrated sentiment analysis helps understand emotional tones, offering gifts that align with both practical and emotional preferences. The interactive star-rating system speeds up the process by allowing users to quickly rate their preferences. Offering both experience-based and product-based gifts, the chatbot ensures users find meaningful options for any occasion. Additionally, AI-suggested greeting cards can be personalized, adding an extra thoughtful touch. The chatbot combines cutting-edge AI with real-time e-commerce integration to bring convenience, efficiency, and emotional resonance to modern gifting.         
+           </p>
+                <!-- Styled "Explore Now" button -->
+                <button class="cssbuttons-io" onclick="window.open('/project', '_blank');">
+                    <span>Explore Now 🚀</span>
+                  </button>
+            </div>
+       
+            <div class="right-side-reverse2">
+           <img src="{{ url_for('static', filename='pose_60.png') }}" alt="Project Image">
+        </div>
+    </div>
+
+
+    <div class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-cards">
+            <div class="team-card">
+                <div class="profile-pic">
+                     <img src="{{ url_for('static', filename='avani.jpg') }}" alt="Avani Brahmbhatt">
+                </div>
+                <h3>Avani Brahmbhatt</h3>
+                <p> I love playing with numbers, ML models and creating feasible solutions for real world problems.  With good grip in Python, R Programming and Data Visualization, sitting down with huge boring data until it tells me what I need to know, has became a part of regular drill now.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/avani-brahmbhatt-5a512928a" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Avani-Brahmbhatt" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-pic">
+                    <img src="{{ url_for('static', filename='neelshah.jpg') }}" alt="Neel Shah">
+                </div>
+                <h3>Neel Shah</h3>
+                <p> I'm a versatile full-stack developer skilled in HTML,
+                     CSS, JavaScript, Python, and Flask. I specializes in AI, ML,
+                      and deep learning, bringing innovative solutions to complex
+                     challenges. I seamlessly integrates modern web development with 
+                     AI/ML techniques.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/neel-shah-077128300/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Neelshah1810" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-pic">
+                    <img src="{{ url_for('static', filename='yashvi.jpg') }}" alt="Yashvi Patel">
+                </div>
+                <h3>Yashvi Patel</h3>
+                <p> I am passionate about applying innovative ideas to real-world challenges, with expertise in data analysis, machine learning, and deep learning. I have strong skills in Html, CSS, Javascript, Data visualization, Python, R, and SQL, which allow me to solve complex problems efficiently.</p>                
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/yashvi-patel-b17294300/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/yashvi69" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-pic">
+                    <img src="{{ url_for('static', filename='stavan.jpg') }}" alt="Stavan Bhatt">
+                </div>
+                <h3>Stavan Bhatt</h3>
+                <p> I’m a passionate developer with expertise in Python, prompt engineering, data science, and R. I build data-driven applications that deliver meaningful insights. My deep understanding of analytics and ML enables me to transform complex data into actionable intelligence.</p>               
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/stavan-bhatt-1a063b315/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Stavan08" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="profile-pic">
+                <img src="{{ url_for('static', filename='mahi.jpg') }}" alt="Mahie Patel">
+            </div>
+                <h3>Mahie Patel</h3>
+                <p> I am particularly interested in the applications of AI and ML in various industries.I have dived deep into the applications of Html, CSS, Java Script and Python.Front end development is rather my go to thing. I can seamlessly integrate back end with front end.</p>                
+               <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/mahie-patel-a8b25627a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/MahiePatel" target="_blank">
+                    <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="footer-content">
+        <p>Website built by Team Cyber Crafter</p>
+        <p>Thank You!</p>
+    </div>
+</footer>
+
+    
+    <script>
+        const video = document.querySelector('.video-intro video');
+        video.playbackRate = 0.7; // Set playback speed (0.5 for half speed)
+
+        video.onended = function() {
+            const videoIntro = document.querySelector('.video-intro');
+            videoIntro.classList.add('fade-out'); // Add fade-out class
+            
+            // Wait for the animation to finish before hiding the video
+            setTimeout(() => {
+                videoIntro.style.display = 'none';
+                document.querySelector('.content').style.display = 'block';
+            }, 1000); // Adjust this timeout to match the CSS animation duration
+        };
+
+    
+    </script>
+
+</body>
+</html>
